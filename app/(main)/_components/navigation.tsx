@@ -6,6 +6,7 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import UserItem from "./user-items";
 
 function Navigation() {
   const isResizingRef = useRef(false);
@@ -109,8 +110,8 @@ function Navigation() {
           <ChevronsLeft className="h-6 w-6" />
         </div>
         <div>
-          {/* <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
+          <UserItem />
+          {/* <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} /> */}
         </div>
