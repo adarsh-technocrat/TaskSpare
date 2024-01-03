@@ -32,10 +32,10 @@ function Item({
 }: ItemProps) {
   const ChevronIcon = expanded ? ChevronDown : ChevronRight;
 
-  function handleExpand(): void {
-    throw new Error("Function not implemented.");
-  }
-
+  const handleExpand = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    event.stopPropagation();
+    onExpand?.(); // optional calling the function
+  };
   return (
     <div
       onClick={onClick}
