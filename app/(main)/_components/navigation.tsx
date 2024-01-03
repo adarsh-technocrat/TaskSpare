@@ -7,6 +7,11 @@ import { useMediaQuery } from "usehooks-ts";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import UserItem from "./user-items";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { toast } from "sonner";
+import Item from "./item";
+import DocumentList from "./document-list";
 
 function Navigation() {
   const isResizingRef = useRef(false);
@@ -21,6 +26,7 @@ function Navigation() {
   const params = useParams();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const create = useMutation(api.documents.create);
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.preventDefault();
@@ -89,6 +95,19 @@ function Navigation() {
     }
   }, [pathname, isMobile]);
 
+  const handleCreate = () => {
+    const promise = create({ title: "Untitled" });
+    // .then((documentId) =>
+    //   router.push(`/documents/${documentId}`)
+    // );
+
+    toast.promise(promise, {
+      loading: "Creating a new note...",
+      success: "New note created!",
+      error: "Failed to create a new note.",
+    });
+  };
+
   return (
     <>
       <aside
@@ -111,13 +130,13 @@ function Navigation() {
         </div>
         <div>
           <UserItem />
-          {/* <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
-          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
-          <Item onClick={handleCreate} label="New page" icon={PlusCircle} /> */}
+          <Item label="Search" icon={Search} isSearch onClick={() => {}} />
+          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
         <div className="mt-4">
-          {/* <DocumentList />
-          <Item onClick={handleCreate} icon={Plus} label="Add a page" /> */}
+          <DocumentList />
+          <Item onClick={handleCreate} icon={Plus} label="Add a page" />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
               {/* <Item label="Trash" icon={Trash} /> */}
