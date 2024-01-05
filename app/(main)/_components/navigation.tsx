@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import Item from "./item";
 import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
 
 function Navigation() {
   const isResizingRef = useRef(false);
@@ -29,6 +30,7 @@ function Navigation() {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
+  const { onOpen } = useSearch();
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.preventDefault();
@@ -98,11 +100,9 @@ function Navigation() {
   }, [pathname, isMobile]);
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" });
-    // .then((documentId) =>
-    //   router.push(`/documents/${documentId}`)
-    // );
-
+    const promise = create({ title: "Untitled" }).then((documentId) =>
+      router.push(`/documents/${documentId}`)
+    );
     toast.promise(promise, {
       loading: "Creating a new note...",
       success: "New note created!",
@@ -132,7 +132,7 @@ function Navigation() {
         </div>
         <div>
           <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={() => {}} />
+          <Item label="Search" icon={Search} isSearch onClick={onOpen} />
           <Item label="Settings" icon={Settings} onClick={() => {}} />
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
