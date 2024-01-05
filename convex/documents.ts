@@ -72,9 +72,17 @@ export const archive = mutation({
         .query("documents")
         .withIndex("by_user_parent", (q) => q.eq("userId", userId).eq("parentDocument", documentId))
         .collect();
+
+      for (const child of children) {
+        await ctx.db.patch(child._id, { isArchived: true });
+        await recursiveArchive(child._id);
+      }
     };
 
     const document = ctx.db.patch(args.id, { isArchived: true }); // this is the logic where self document get isArchived but not its children
+
+    recursiveArchive(args.id);
+
     return document;
   },
 });
