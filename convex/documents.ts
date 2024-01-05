@@ -139,6 +139,17 @@ export const restore = mutation({
       }
     };
 
+    // const option: Partial<Doc<"documents">> = {
+    //   isArchived: false,
+    // };
+
+    // if (existingDocument.parentDocument) {
+    //   const parent = await ctx.db.get(existingDocument.parentDocument);
+    //   if (parent?.isArchived) {
+    //     option.parentDocument = undefined;
+    //   }
+    // }
+
     const document = ctx.db.patch(args.id, { isArchived: false });
     recursiveRestore(args.id);
     return document;
