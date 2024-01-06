@@ -16,6 +16,7 @@ import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
+import Navbar from "./navbar";
 
 function Navigation() {
   const isResizingRef = useRef(false);
@@ -171,9 +172,8 @@ function Navigation() {
         )}
       >
         {!!params.documentId ? (
-          <></>
+          <Navbar isCollapsed={isCollapsed} onResetWidth={resetWidth} />
         ) : (
-          //   <Navbar isCollapsed={isCollapsed} onResetWidth={resetWidth} />
           <nav className="bg-transparent px-3 py-2 w-full">
             {isCollapsed && (
               <MenuIcon

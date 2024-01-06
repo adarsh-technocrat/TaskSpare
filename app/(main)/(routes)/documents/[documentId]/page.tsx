@@ -1,5 +1,5 @@
 function DocumentIdPage() {
-  return <div>page</div>;
+  return <div>Document Id</div>;
 }
 
 export default DocumentIdPage;
