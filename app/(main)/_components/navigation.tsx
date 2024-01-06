@@ -15,6 +15,7 @@ import Item from "./item";
 import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 function Navigation() {
   const isResizingRef = useRef(false);
@@ -31,6 +32,7 @@ function Navigation() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
   const { onOpen } = useSearch();
+  const settings = useSettings();
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.preventDefault();
@@ -133,7 +135,13 @@ function Navigation() {
         <div>
           <UserItem />
           <Item label="Search" icon={Search} isSearch onClick={onOpen} />
-          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <Item
+            label="Settings"
+            icon={Settings}
+            onClick={() => {
+              settings.onOpen();
+            }}
+          />
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
         <div className="mt-4">
