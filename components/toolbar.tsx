@@ -65,7 +65,7 @@ function Toolbar({ initialData, preview }: ToolbarProps) {
   };
 
   return (
-    <div className="pl-[54px] pt-[50px] group relative">
+    <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
         <div className="flex items-center gap-x-2 group/icon pt-6">
           <IconPicker onChange={onIconSelect}>
