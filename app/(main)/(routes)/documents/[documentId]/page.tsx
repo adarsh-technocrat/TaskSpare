@@ -1,6 +1,7 @@
 "use client";
 
 import { Cover } from "@/components/cover";
+import { CoverImageModal } from "@/components/modals/cover-image-model";
 import Toolbar from "@/components/toolbar";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
@@ -41,6 +42,7 @@ function DocumentIdPage({ params }: DocumentIdPageProps) {
         <Toolbar initialData={document} />
         {/* <Editor onChange={onChange} initialContent={document.content} /> */}
       </div>
+      <CoverImageModal />
     </div>
   );
 }
