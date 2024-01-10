@@ -27,7 +27,7 @@ function DocumentIdPage({ params }: DocumentIdPageProps) {
   };
 
   if (document === undefined) {
-    return <div>Loading ..</div>;
+    return <Cover.Skeleton />;
   }
 
   if (document === null) {
@@ -40,7 +40,7 @@ function DocumentIdPage({ params }: DocumentIdPageProps) {
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar initialData={document} />
         {/* <Editor onChange={onChange} initialContent={document.content} /> */}
-      </div>{" "}
+      </div>
     </div>
   );
 }
