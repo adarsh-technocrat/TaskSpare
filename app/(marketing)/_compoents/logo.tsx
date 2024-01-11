@@ -12,7 +12,9 @@ export const Logo = () => {
     <div className="hidden md:flex items-center gap-x-2">
       <Image src="/logo.svg" height="40" width="40" alt="Logo" className="dark:hidden" />
       <Image src="/logo-dark.svg" height="40" width="40" alt="Logo" className="hidden dark:block" />
-      <text className={cn("font-semibold text-nowrap", font.className)}>Task Spare</text>
+      <text className={cn("font-semibold text-nowrap dark:text-white", font.className)}>
+        Task Spare
+      </text>
     </div>
   );
 };

@@ -32,7 +32,7 @@ export const Navbar = () => {
         {!isAuthenticated && !isLoading && (
           <>
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="dark:text-white">
                 Log in
               </Button>
             </SignInButton>
