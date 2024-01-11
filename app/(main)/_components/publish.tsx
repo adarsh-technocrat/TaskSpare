@@ -66,7 +66,7 @@ export const Publish = ({ initialData }: PublishProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button size="sm" variant="ghost">
+        <Button size="sm" variant="ghost" className="dark:text-white">
           Publish
           {initialData.isPublished && <Globe className="text-sky-500 w-4 h-4 ml-2" />}
         </Button>

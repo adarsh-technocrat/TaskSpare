@@ -54,11 +54,11 @@ function Title({ initialData }: TitleProps) {
           onChange={onChange}
           onKeyDown={onKeyDown}
           value={title}
-          className="h-7 px-2 focus-visible:ring-transparent"
+          className="h-7 dark:text-white px-2 focus-visible:ring-transparent"
         />
       ) : (
         <Button onClick={enableInput} variant="ghost" size="sm" className="font-normal h-auto p-1">
-          <span className="truncate">{initialData?.title}</span>
+          <span className="truncate dark:text-white">{initialData?.title}</span>
         </Button>
       )}
     </div>
