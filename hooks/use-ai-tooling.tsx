@@ -1,23 +1,26 @@
+import { ContinueWritingBlock } from "@/types/editor_block_types";
 import { Block, BlockNoteEditor, PartialBlock } from "@blocknote/core";
 import { ReactSlashMenuItem } from "@blocknote/react";
 import { PenLine } from "lucide-react";
 
 export const useAiTooling = () => {
-  const insertHelloWorld = (editor: BlockNoteEditor) => {
-    const currentBlock: Block = editor.getTextCursorPosition().block;
+  const insertContinueWritingBlock = (editor: BlockNoteEditor) => {
+    const currentBlock = editor.getTextCursorPosition().block;
 
-    const continueWritingBlock: PartialBlock = {
-      type: "continueWriting",
-      // content: [{ type: "text", text: "Hello World", styles: { f: true } }],
+    const continueWritingBlock: ContinueWritingBlock = {
+      type: "aiToolBar",
+      props: {
+        generatedTextContent: "",
+      },
     };
 
     editor.insertBlocks([continueWritingBlock], currentBlock, "before");
   };
 
   const insertContinueWritingItem: ReactSlashMenuItem = {
-    name: "Continue writing",
-    execute: insertHelloWorld,
-    aliases: ["writing", "cw"],
+    name: "AI Tool Bar",
+    execute: insertContinueWritingBlock,
+    aliases: ["ai", "AI"],
     group: "Task Spare AI",
     icon: <PenLine size={18} />,
     hint: "Inserts a block below your current content, allowing you to continue writing seamlessly.",

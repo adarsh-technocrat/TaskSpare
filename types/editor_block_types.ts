@@ -8,8 +8,10 @@ type DefaultProps = {
 
 export type ContinueWritingBlock = {
   id: string;
-  type: "continueWriting";
-  props: DefaultProps;
+  type: "aiToolBar";
+  props: {
+    generatedTextContent: "";
+  } & Omit<DefaultProps, "textAlignment">;
   content: InlineContent[];
   children: Block[];
 };

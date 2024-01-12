@@ -4,22 +4,23 @@ import { Button } from "./ui/button";
 import { Sparkles } from "lucide-react";
 import { Input } from "./ui/input";
 
-export const ContinueWritingBlock: any = createReactBlockSpec(
+export const AiToolBarBlock: any = createReactBlockSpec(
   {
-    type: "continueWriting",
+    type: "aiToolBar",
     propSchema: {
       ...defaultProps,
       font: {
         default: "Comic Sans MS",
       },
+      generatedTextContent: {
+        default: "",
+      },
     },
-    content: "inline",
+    content: "none",
   },
+
   {
     render: ({ block, contentRef }) => {
-      const style = {
-        fontFamily: block.props.font,
-      };
       return (
         <div className="flex flex-row  justify-between ">
           <div className="flex items-center gap-2 flex-1">
@@ -40,10 +41,7 @@ export const ContinueWritingBlock: any = createReactBlockSpec(
       );
     },
     parse: (element) => {
-      const font = element.style.fontFamily;
-      return {
-        font: font || undefined,
-      };
+      return {};
     },
   }
 );

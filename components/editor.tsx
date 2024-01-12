@@ -6,7 +6,7 @@ import { BlockNoteView, getDefaultReactSlashMenuItems, useBlockNote } from "@blo
 import "@blocknote/react/style.css";
 import { useEdgeStore } from "@/lib/edgestore";
 import { useAiTooling } from "@/hooks/use-ai-tooling";
-import { ContinueWritingBlock } from "./custom_editor_block";
+import { AiToolBarBlock } from "./custom_editor_block";
 
 interface EditorProps {
   onChange: (value: string) => void;
@@ -34,7 +34,7 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
 
   const blockSpecs: any = {
     ...defaultBlockSpecs,
-    continueWriting: ContinueWritingBlock,
+    aiToolBar: AiToolBarBlock,
   };
 
   const editor: BlockNoteEditor = useBlockNote({
@@ -46,6 +46,14 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
     uploadFile: handleUpload,
     slashMenuItems: customSlashMenuItemList,
     blockSpecs: blockSpecs,
+    onTextCursorPositionChange(editor) {
+      const listOfAddedBlocks = editor.topLevelBlocks;
+      const findBlock = listOfAddedBlocks.filter((block) => block.type === "aiToolBar");
+      if (findBlock.length > 1) {
+        findBlock.shift();
+        editor.removeBlocks(findBlock);
+      }
+    },
   });
 
   return (
