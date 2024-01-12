@@ -10,12 +10,13 @@ import { SingleImageDropzone } from "@/components/single-image-dropzone";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useEdgeStore } from "@/lib/edgestore";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { UnsplashImage } from "../unsplash-image";
 
 export const CoverImageModal = () => {
   const params = useParams();
   const update = useMutation(api.documents.update);
   const coverImage = useCoverImage();
-
   const [file, setFile] = useState<File>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -27,38 +28,59 @@ export const CoverImageModal = () => {
     coverImage.onClose();
   };
 
-  const onChange = async (file?: File) => {
-    if (file) {
+  const onChange = async ({
+    file,
+    unsplashBannerUrl,
+  }: {
+    file?: File;
+    unsplashBannerUrl?: string;
+  }) => {
+    if (file || unsplashBannerUrl) {
       setIsSubmitting(true);
       setFile(file);
-
-      const res = await edgestore.publicFiles.upload({
-        file,
-        options: {
-          replaceTargetUrl: coverImage.url,
-        },
-      });
-
+      let res: any = null;
+      if (!unsplashBannerUrl && file) {
+        res = await edgestore.publicFiles.upload({
+          file,
+          options: {
+            replaceTargetUrl: coverImage.url,
+          },
+        });
+      }
       await update({
         id: params.documentId as Id<"documents">,
-        coverImage: res.url,
+        coverImage: res?.url ?? unsplashBannerUrl,
       });
 
       onClose();
     }
   };
+
   return (
     <Dialog open={coverImage.isOpen} onOpenChange={coverImage.onClose}>
       <DialogContent>
         <DialogHeader>
           <h2 className="text-center text-lg font-semibold dark:text-white">Cover Image</h2>
         </DialogHeader>
-        <SingleImageDropzone
-          className="w-full outline-none"
-          disabled={isSubmitting}
-          value={file}
-          onChange={onChange}
-        />
+        <Tabs defaultValue="upload" className="pt-2">
+          <div className="flex flex-row justify-center items-center">
+            <TabsList>
+              <TabsTrigger value="upload">Upload Cover</TabsTrigger>
+              <TabsTrigger value="unsplash">Select From Unsplash</TabsTrigger>
+            </TabsList>
+          </div>
+          <TabsContent value="upload" className="py-3">
+            <SingleImageDropzone
+              className="w-full outline-none"
+              disabled={isSubmitting}
+              value={file}
+              onChange={(file) => onChange({ file })}
+            />
+          </TabsContent>
+          <TabsContent value="unsplash" className="py-3">
+            <UnsplashImage onChange={(unsplashBannerUrl) => onChange({ unsplashBannerUrl })} />
+          </TabsContent>
+        </Tabs>
       </DialogContent>
     </Dialog>
   );
