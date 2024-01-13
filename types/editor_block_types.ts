@@ -1,4 +1,4 @@
-import { Block, InlineContent } from "@blocknote/core";
+import { Block, BlockNoteEditor, InlineContent } from "@blocknote/core";
 
 type DefaultProps = {
   backgroundColor?: "default";
@@ -9,9 +9,7 @@ type DefaultProps = {
 export type ContinueWritingBlock = {
   id: string;
   type: "aiToolBar";
-  props: {
-    generatedTextContent: "";
-  } & Omit<DefaultProps, "textAlignment">;
+  props: DefaultProps;
   content: InlineContent[];
   children: Block[];
 };

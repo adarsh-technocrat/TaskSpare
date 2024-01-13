@@ -9,9 +9,6 @@ export const useAiTooling = () => {
 
     const continueWritingBlock: ContinueWritingBlock = {
       type: "aiToolBar",
-      props: {
-        generatedTextContent: "",
-      },
     };
 
     editor.insertBlocks([continueWritingBlock], currentBlock, "before");

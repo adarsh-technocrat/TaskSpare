@@ -20,8 +20,9 @@ export const UnsplashImage = ({ onChange }: UnsplashImageProps) => {
   const getUnsplashBanner = async () => {
     setUnsplashDataLoading(true);
     const data = await unsplash.search.getPhotos({
-      query: "Banners",
+      query: "Landscape Images",
       perPage: 100,
+      page: 5,
       orientation: "landscape",
     });
     setUnsplashData(data?.response?.results);
