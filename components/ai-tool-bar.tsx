@@ -5,13 +5,6 @@ import { Block, BlockFromConfig, BlockNoteEditor, PartialBlock } from "@blocknot
 import { useEffect, useState } from "react";
 
 function AiToolBar(block: BlockFromConfig) {
-  const [url, setUrl] = useState("");
-
-  useEffect(() => {
-    // if (!block?.props?.url) return;
-    setUrl(block?.props?.url ?? "thisis isi i");
-  }, []);
-
   return (
     <div className="flex flex-row  justify-between ">
       <div className="flex items-center gap-2 flex-1">
@@ -22,9 +15,7 @@ function AiToolBar(block: BlockFromConfig) {
         />
       </div>
       <Button
-        onClick={() => {
-          setUrl("URL");
-        }}
+        onClick={() => {}}
         className="bg-gradient-to-r from-purple-400 to-indigo-600 text-white font-bold py-2 px-4 rounded-full flex flex-row justify-center gap-2 cursor-pointer"
       >
         <Sparkles />
