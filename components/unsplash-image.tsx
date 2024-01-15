@@ -14,7 +14,7 @@ export const UnsplashImage = ({ onChange }: UnsplashImageProps) => {
   const [unsplashData, setUnsplashData] = useState<any>([]);
 
   const unsplash = createApi({
-    accessKey: process.env.UNSPLASH_ACCESS_KEY ?? "bUhQZ9Ij0tc8RjLt2rJ819ekZupaKE_JkMxOhTwrFg8",
+    accessKey: process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY ?? "",
   });
 
   const getUnsplashBanner = async () => {
