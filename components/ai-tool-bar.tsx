@@ -1,10 +1,8 @@
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Block, BlockFromConfig, BlockNoteEditor, PartialBlock } from "@blocknote/core";
-import { useEffect, useState } from "react";
 
-function AiToolBar(block: BlockFromConfig) {
+function AiToolBar() {
   return (
     <div className="flex flex-row  justify-between ">
       <div className="flex items-center gap-2 flex-1">
