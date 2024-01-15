@@ -6,10 +6,10 @@ type DefaultProps = {
   textAlignment?: "left" | "center" | "right" | "justify";
 };
 
-export type ContinueWritingBlock = {
-  id: string;
-  type: "aiToolBar";
-  props: DefaultProps;
-  content: InlineContent[];
-  children: Block[];
-};
+// export type ContinueWritingBlock = {
+//   id: string;
+//   type: "aiToolBar";
+//   props: DefaultProps;
+//   content: InlineContent[];
+//   children: Block[];
+// };
