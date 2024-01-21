@@ -1,6 +1,7 @@
 "use client";
 
 import { Cover } from "@/components/cover";
+import { ContextMenuProvider } from "@/components/providers/context-menu-provider";
 import Toolbar from "@/components/toolbar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
@@ -56,7 +57,9 @@ function DocumentIdPage({ params }: DocumentIdPageProps) {
       <Cover url={document.coverImage} />
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar initialData={document} />
-        <Editor onChange={onChange} initialContent={document.content} />
+        <ContextMenuProvider>
+          <Editor onChange={onChange} initialContent={document.content} />
+        </ContextMenuProvider>
       </div>
     </div>
   );
