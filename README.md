@@ -12,6 +12,8 @@
 
 ## 🚀 Demo
 
+<img align="center" src="https://github.com/adarsh-technocrat/TaskSpare/assets/47661086/d8235419-e2b5-4660-b7a4-a455faebd980" width="100%"/>
+
 ## 🧐 Features
 
 ## 🛠️ Installation Steps
