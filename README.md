@@ -74,9 +74,9 @@ Contributions are welcome! Here are several ways you can contribute:
 
 - [Next.js 14](https://nextjs.org/) 🚀
 - [Tailwind CSS](https://tailwindcss.com/) 🎨
-- [Shadcn UI Component Library](https://shadcn-ui-library.example/) 🛠️
+- [Shadcn UI Component Library](https://ui.shadcn.com/) 🛠️
 - [Convex Real-time Database](https://convexdb.example/) 🔄
-- [Edgestore](https://edgestore.example/) for file uploading 📁
+- [Edgestore](https://edgestore.dev/) for file uploading 📁
 - [Unsplash API](https://unsplash.com/developers) for Cover Image 📷
 
 
