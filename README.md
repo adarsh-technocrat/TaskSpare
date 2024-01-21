@@ -1,14 +1,14 @@
 
 <h1 align="center">Task Spare -Your Ideas, Documents, & Plans. Unified ✨️</h4>
 
-<img align="center" src="https://user-images.githubusercontent.com/47661086/158646722-118be527-1e9c-48e9-a811-f7101b27a0c3.png" width="100%"/>
+<img align="center" src="https://github.com/adarsh-technocrat/TaskSpare/assets/47661086/bf34e135-ef7b-487c-a28f-ba59e6829387" width="100%"/>
 </br>
-<img align="center" src="https://user-images.githubusercontent.com/47661086/162567918-d8a7ef7f-a153-4bc6-aaa1-d75f6e0a5792.png" width="100%"/>
+<img align="center" src="https://github.com/adarsh-technocrat/TaskSpare/assets/47661086/4ed60382-2b86-47cc-9ddf-63434ebf9547" width="100%"/>
 </br>
-<img align="center" src="https://user-images.githubusercontent.com/47661086/162623895-174c8817-77ca-41ad-9429-6b60a76a5d19.png" width="100%"/>
-  
+<img align="center" src="https://github.com/adarsh-technocrat/TaskSpare/assets/47661086/def8e8a3-80e0-42f4-9749-4c69f95f0828" width="100%"/>
 
-### Introducing Watch Anime ✌️
+
+### Introducing Task Spare ✌️
 
 ## 🚀 Demo
 
@@ -24,7 +24,7 @@
 
 ## 🛡️ License!
 
-This project is licensed under the MIT License - see the [`LICENSE`](https://github.com/adarsh-technocrat/Watch-Anime/blob/main/MIT-LICENSE.txt) file for details.
+This project is licensed under the MIT License - see the [`LICENSE`]() file for details.
 
 ## 🦄 Deploy
 
@@ -41,18 +41,13 @@ Thanks a lot for spending your time in helping code house grow and help many dev
 
 Also, check them on ..
 
-<a href="https://github.com/adarsh-technocrat/Watch-Anime/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=adarsh-technocrat/Watch-Anime" />
+<a href="https://github.com/adarsh-technocrat/TaskSpare/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=adarsh-technocrat/TaskSpare" />
 </a>
 
 ## 🙏 Support
 
 This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
-
-If you found the app helpful, consider supporting me with a coffee.
-
-<a href="https://www.buymeacoffee.com/AdarshKumar" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
----
 
 <h3 align="center">
 Mood needs a ⭐️ from you
