@@ -85,6 +85,7 @@ Contributions are welcome! Here are several ways you can contribute:
 - Adding Content from URL to the Editor 🌐
 - Add AI to Block Editor 🤖
 - Adding Search Feature to Unsplash for Cover Image 🔍
+- Adding Realtime Collaboration 
 - More features from the community are welcome! 🌟
 
 ## 🛡️ License!
