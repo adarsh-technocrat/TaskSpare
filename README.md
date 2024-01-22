@@ -44,10 +44,17 @@
 
 ## 🛠️ Installation Steps
 
-1. Clone the Repo: `https://github.com/adarsh-technocrat/TaskSpare`
-2. Install dependencies: `npm install`
+1. Fork the Repository
+  - Go to the project repository on GitHub: https://github.com/adarsh-technocrat/TaskSpare
+  - Click on the "Fork" button in the top right corner to create your copy of the repository.
+2. Clone Your Fork
+  - git clone https://github.com/your-username/TaskSpare.git
+  - cd TaskSpare
+3. Install dependencies: `npm install`
 3. Setup Convex: `npx convex dev`
 4. Start the app: `npm run dev`
+5. Create a New Branch
+  - git checkout -b feature-name `feature/email-verification-workflow` [follow](https://phoenixnap.com/kb/git-branch-name-convention) 
 
 ### Environment Variables (.env.local):
 
