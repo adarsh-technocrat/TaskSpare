@@ -10,6 +10,7 @@ function LinkPreview({ url }: { url: string }) {
             try {
                 const response = await fetch(url);
                 const data = await response.text();
+                console.log(data)
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
                 const title = doc.querySelector('title')?.textContent || '';
@@ -40,17 +41,19 @@ function LinkPreview({ url }: { url: string }) {
     };
 
     return (
-        <div onClick={handleClick} style={{ cursor: 'pointer' }} className='my-3'>
-            <Card>
+        <div onClick={handleClick} className='cursor-pointer relative mb-4'>
+            <Card className='border-none relative overflow-hidden bg-white'>
                 <CardHeader>
-                    <CardTitle>{previewData.title}</CardTitle>
+                    <CardTitle className='text-black'>{previewData.title}</CardTitle>
                     <CardDescription>{previewData.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    {previewData.image && <img src={previewData.image} alt="Link Preview" />}
+                    {previewData.image && <img src={previewData.image} alt="Link Preview" className='w-full h-auto block' />}
+                    <div className='absolute bottom-0 left-0 w-full h-full' style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%)' }}></div>
                 </CardContent>
             </Card>
         </div>
+
     );
 }
 
