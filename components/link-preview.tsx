@@ -42,7 +42,7 @@ function LinkPreview({ url }: { url: string }) {
 
     return (
         <div onClick={handleClick} className='cursor-pointer relative mb-4'>
-            <Card className='border-none relative overflow-hidden bg-white'>
+            <Card className='border-none relative overflow-hidden bg-white max-h-[250px]'>
                 <CardHeader>
                     <CardTitle className='text-black'>{previewData.title}</CardTitle>
                     <CardDescription>{previewData.description}</CardDescription>
