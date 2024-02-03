@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 type WebScrapeStore = {
-  content?: string;
+  url?: string;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
@@ -10,6 +10,6 @@ type WebScrapeStore = {
 export const useWebScrap = create<WebScrapeStore>((set) => ({
   url: undefined,
   isOpen: false,
-  onOpen: () => set({ isOpen: true, content: undefined }),
-  onClose: () => set({ isOpen: false, content: undefined }),
+  onOpen: () => set({ isOpen: true, url: undefined }),
+  onClose: () => set({ isOpen: false, url: undefined }),
 }));

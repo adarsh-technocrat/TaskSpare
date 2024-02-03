@@ -19,6 +19,8 @@ import { CopyIcon, Image } from "lucide-react";
 import LinkPreview from "../link-preview";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
+import { toast } from "sonner";
+import { scrapeAndConstructData } from "@/lib/actions";
 
 export const WebScrapingModal = () => {
   const webscrap = useWebScrap();
@@ -30,7 +32,19 @@ export const WebScrapingModal = () => {
   };
 
   const onScraping = async () => {
-    onClose();
+    setIsSubmitting(true)
+    // Scrape the Data 
+    const promise = scrapeAndConstructData(url).then((value) => {
+      console.log("value", value)
+      setIsSubmitting(false)
+      onClose();
+    });
+    toast.promise(promise, {
+      loading: "Scrapping the data...",
+      success: "Data has been scraped",
+      error: "Failed to scrape the data",
+    });
+
   };
 
   const handleonChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +75,7 @@ export const WebScrapingModal = () => {
               placeholder="Enter the website URL that you need to scrape"
               onChange={handleonChange}
             />
-            <Button type="submit" size="sm" className="px-3">
+            <Button type="submit" size="sm" className="px-3" onClick={onScraping}>
               Scrape Data
             </Button>
           </div>
