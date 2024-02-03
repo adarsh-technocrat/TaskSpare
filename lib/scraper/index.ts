@@ -14,7 +14,7 @@ export async function scrapeWebsite(url: string) {
         },
         host: "brd.superproxy.io",
         port,
-        rejectUnauthorized: false,
+        rejectUnauthorized: false
     };
     try {
         const response = await axios.get(url, { proxy: options });
