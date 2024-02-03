@@ -1,7 +1,13 @@
 
 <h1 align="center">Task Spare - Your Ideas, Documents, & Plans. Unified ✨️</h1>
 
-<p align="center">
+<div align="center">
+    <img src="https://discordapp.com/api/guilds/982865327538995230/widget.png?style=shield"/>
+    <br/>
+    <br/>
+</div>
+
+<p align="center" >
   <img src="https://github.com/adarsh-technocrat/TaskSpare/assets/47661086/bf34e135-ef7b-487c-a28f-ba59e6829387" width="100%" alt="Image 1">
 </p>
 
@@ -121,6 +127,8 @@ Also, check them on ..
 </a>
 
 ## 🙏 Support
+
+![Discord Banner 2](https://discordapp.com/api/guilds/982865327538995230/widget.png?style=banner2)
 
 This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
 
