@@ -126,7 +126,7 @@ Also, check them on ..
   <img src="https://contrib.rocks/image?repo=adarsh-technocrat/TaskSpare" />
 </a>
 
-## 🙏 Support
+## 🙏 Support And be part of the community
 
 ![Discord Banner 2](https://discordapp.com/api/guilds/982865327538995230/widget.png?style=banner2)
 
