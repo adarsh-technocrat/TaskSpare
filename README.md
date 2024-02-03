@@ -1,10 +1,12 @@
 
 <h1 align="center">Task Spare - Your Ideas, Documents, & Plans. Unified ✨️</h1>
 
-<div align="center">
+<div align="center" >
+    <a href='https://discord.gg/NN8m2CW5'>
     <img src="https://discordapp.com/api/guilds/982865327538995230/widget.png?style=shield"/>
     <br/>
     <br/>
+    <a/>
 </div>
 
 <p align="center" >
@@ -128,7 +130,9 @@ Also, check them on ..
 
 ## 🙏 Support And be part of the community
 
-![Discord Banner 2](https://discordapp.com/api/guilds/982865327538995230/widget.png?style=banner2)
+<a href='https://discord.gg/NN8m2CW5'>
+ <img src="https://discordapp.com/api/guilds/982865327538995230/widget.png?style=banner2"/>
+<a/>
 
 This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
 
